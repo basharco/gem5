@@ -1,5 +1,8 @@
 ON RED
 
+PULL DOCKER IMAGE
+docker pull ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0
+
 RUN DOCKER
 docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0
 
