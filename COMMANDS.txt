@@ -1,0 +1,9 @@
+ON RED
+
+RUN DOCKER
+docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0
+
+BUILD gem5
+scons build/{ISA}/gem5.{variant} -j {cpus}
+ex.
+scons build/X86/gem5.opt -j 54
