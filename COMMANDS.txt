@@ -1,10 +1,34 @@
 ON RED
 
+
+22.04 (all dependencies)
+
 PULL DOCKER IMAGE
 docker pull ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0
 
 RUN DOCKER
 docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0
+
+
+22.04 (minimum dependencies)
+
+PULL DOCKER IMAGE
+docker pull ghcr.io/gem5/ubuntu-22.04_min-dependencies:v23-0
+
+RUN DOCKER
+docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it ghcr.io/gem5/ubuntu-22.04_min-dependencies:v23-0
+
+20.04 (all dependencies)
+
+PULL DOCKER IMAGE
+docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
+
+RUN DOCKER
+docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
 
 BUILD gem5
 scons build/{ISA}/gem5.{variant} -j {cpus}
