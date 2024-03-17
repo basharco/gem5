@@ -20,12 +20,6 @@ docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
 RUN DOCKER
 docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
 
-MY DOCKER
-BUILD
-docker build -t bashar-gem5 .
-RUN
-docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it bashar-gem5
-
 
 -----------------------------------------------------------------------------------------------------------------------
 
