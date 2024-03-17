@@ -24,7 +24,7 @@ MY DOCKER
 BUILD
 docker build -t bashar-gem5 .
 RUN
-docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --volume /u/beid/.ssh:/.ssh --rm -it bashar-gem5
+docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it bashar-gem5
 
 
 -----------------------------------------------------------------------------------------------------------------------
