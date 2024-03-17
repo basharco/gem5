@@ -24,7 +24,7 @@ MY DOCKER
 BUILD
 docker build -t bashar-gem5 .
 RUN
-docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --rm -it bashar-gem5
+docker run -u $UID:$GID --volume /u/beid/code/gem5:/gem5 --volume /u/beid/.ssh:/.ssh --rm -it bashar-gem5
 
 
 -----------------------------------------------------------------------------------------------------------------------
@@ -35,6 +35,7 @@ scons build/{ISA}/gem5.{variant} -j {cpus}
 ex.
 scons build/X86/gem5.opt -j 54
 
-
 RUN gem5
+./build/{ISA}/gem5.{variant} [gem5 options] {simulation script} [script options]
+ex.
 build/X86/gem5.opt configs/learning_gem5/part1/simple.py
